@@ -1,0 +1,91 @@
+### - разделитель для запросов
+
+
+GET {{url}}/api/container/image
+
+###
+
+
+GET {{url}}/api/container/
+
+###
+
+POST {{url}}/api/container
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "Last post",
+  "media": "media",
+  "extension": "image"
+}
+
+###
+
+POST {{url}}/api/posts
+Content-Type: application/json
+
+{
+  "id": 0,
+  "content": "Dislike this stuff! I'm disagree with author!",
+  "media": null
+}
+
+###
+
+DELETE {{url}}/api/posts/1
+
+###
+
+POST {{url}}/api/posts/1/likes
+
+###
+
+DELETE {{url}}/api/posts/1/likes
+
+###
+
+GET {{url}}/api/filesСontainer
+
+###
+
+DELETE {{url}}/api/posts/hello
+
+###
+
+POST {{url}}/api/files/multipart
+Content-Type: multipart/form-data; boundary=WebApp
+
+--WebApp
+Content-Disposition: form-data; name="file"; filename="panda.jpg"
+Content-Type: image/jpeg
+
+< ./java.jpg
+--WebApp--
+
+###
+
+POST {{url}}/api/files/model
+Content-Type: multipart/form-data; boundary=WebApp
+
+--WebApp
+Content-Disposition: form-data; name="name"
+Content-Type: text/plain
+
+PANDA
+
+--WebApp
+Content-Disposition: form-data; name="file"; filename="panda.jpg"
+Content-Type: image/jpeg
+
+< ./java.jpg
+--WebApp--
+
+###
+
+POST {{url}}/api/files/bytes
+Content-Type: application/octet-stream
+
+< ./java.jpg
+
+###
